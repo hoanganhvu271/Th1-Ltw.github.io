@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thi trắc nghiệm</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="nav-logo">
+            <a href="#">
+                <div class="img-logo"> <img src="https://code.ptit.edu.vn/2020/images/logo_ptit.png" alt="Logo"></div>
+            </a>
+        </div>
+        <div class="header-title">
+            <a href="#">PTIT TEST</a>
+        </div>
+
+        <div class="nav">
+            <div class="nav-element"><a href="#">Ngân hàng đề thi</a></div>
+            <div class="nav-element"><a href="#">Kết quả</a></div>
+            <div class="nav-element"><a href="#">Thống kê</a></div>
+            <div class="nav-element"><a href="#">Tin tức</a></div>
+        </div>
+
+        <div class="avt-logo">
+            <a href="#">
+                <div class="img-avt"> <img src="https://code.ptit.edu.vn/2020/images/avt.png" alt="Logo"></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="information">
+        <div class="student-information">
+            <div class="zone">
+                <label for="student-code">Mã sinh viên: </label>
+                <input type="text" name="student-code" id="student-code" required>
+                <br>
+
+                <label for="name">Họ và tên: </label>
+                <input type="text" name="name" id="name" required>
+
+                <br>
+
+                <label for="class-name">Lớp: </label>
+                <input type="text" name="class-name" id="class-name" required>
+                <br>
+                <label for="dob">Ngày sinh: </label>
+                <input type="text" name="dob" id="dob" required>
+                <br>
+                <button type="submit" id="confirm-btn" onclick="render()">Xác nhận</button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="question-information" id="question-information">
+        <div class="test-name">Bài thi số 01</div>
+
+        <div class="test-time" id="test-time">
+            <p>00:00</p>
+        </div>
+        <hr>
+        <div class="grid-container" id="grid">
+            <!-- <div class="row" id="row1">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+                <div class="grid-item">7</div>
+                <div class="grid-item">8</div>
+                <div class="grid-item">9</div>
+                <div class="grid-item" onclick="scrollToQuestion('10')">10</div>
+            </div>
+
+            <div class="row" id="row2">
+                <div class="grid-item">11</div>
+                <div class="grid-item">12</div>
+                <div class="grid-item">13</div>
+                <div class="grid-item">14</div>
+                <div class="grid-item">15</div>
+                <div class="grid-item">16</div>
+                <div class="grid-item">17</div>
+                <div class="grid-item">18</div>
+                <div class="grid-item">19</div>
+                <div class="grid-item">20</div>
+            </div>
+            <div class="row" id="row3">
+                <div class="grid-item">21</div>
+                <div class="grid-item">22</div>
+                <div class="grid-item">23</div>
+                <div class="grid-item">24</div>
+                <div class="grid-item">25</div>
+                <div class="grid-item">26</div>
+                <div class="grid-item">27</div>
+                <div class="grid-item">28</div>
+                <div class="grid-item">29</div>
+                <div class="grid-item">30</div>
+            </div>
+            <div class="row" id="row4">
+                <div class="grid-item">31</div>
+                <div class="grid-item">32</div>
+                <div class="grid-item">33</div>
+                <div class="grid-item">34</div>
+                <div class="grid-item">35</div>
+                <div class="grid-item">36</div>
+                <div class="grid-item">37</div>
+                <div class="grid-item">38</div>
+                <div class="grid-item">39</div>
+                <div class="grid-item">40</div>
+            </div> -->
+            <!-- Repeat this pattern 4 times for 40 items -->
+        </div>
+
+        <div>
+            <button onclick="checkAllPicked()">Nộp bài</button>
+        </div>
+    </div>
+
+    <div class="question-container" id="question-container">
+
+        <div class="part" id="part-1">
+            <h1>Phần 1: Chọn đúng hoặc sai</h1>
+            <!-- <div class="content" id="1">
+                <div class="question">
+                    Câu 1: Đây là ai?
+
+                </div>
+
+                <div class="answer">
+                    <div class="true-or-false c1" id="1-1" onclick="Choose(this)">
+                        Đúng
+                    </div>
+                    <div class="true-or-false c1" id="1-2" onclick="Choose(this)">
+                        Sai
+                    </div>
+
+                </div>
+
+
+            </div> -->
+
+
+        </div>
+
+        <div class="part" id="part-2">
+            <h1>Phần 2: Chọn đáp án chính xác nhất</h1>
+            <!-- <div class="content" id="1">
+                <div class="question">
+                    Câu 1: Đây là ai?
+
+                </div>
+
+                <div class="answer">
+                    <div class="answer-selection c2" id="1-1" onclick="Choose(this)">
+                        A
+                    </div>
+                    <div class="answer-selection c2" id="1-2" onclick="Choose(this)">
+                        B
+                    </div>
+                    <div class="answer-selection c2" id="1-3" onclick="Choose(this)">
+                        C
+                    </div>
+                    <div class="answer-selection c2" id="1-4" onclick="Choose(this)">
+                        D
+                    </div>
+                </div>
+            </div> -->
+
+
+        </div>
+
+        <div class="part" id="part-3">
+            <h1>Phần 3: Chọn nhiều đáp án</h1>
+
+            <!-- <div class="content" id="2">
+                <div class="question">
+                    Câu 2: Đây là ai?
+                </div>
+
+                <div class="answer">
+                    <div class="answer-selection c3" id="2-1" onclick="MultiChoose(this)">
+                        A
+                    </div>
+                    <div class="answer-selection c3" id="2-2" onclick="MultiChoose(this)">
+                        B
+                    </div>
+                    <div class="answer-selection c3" id="2-3" onclick="MultiChoose(this)">
+                        C
+                    </div>
+                    <div class="answer-selection c3" id="2-4" onclick="MultiChoose(this)">
+                        D
+                    </div>
+                </div>
+
+            </div> -->
+            <!-- <hr> -->
+
+
+
+        </div>
+
+        <div class="part" id="part-4">
+            <h1>Phần 4: Tự luận</h1>
+
+            <!-- <div class="content" id="2">
+                <div class="question">
+                    Câu 2: Đây là ai?
+                </div>
+
+                <div class="answer">
+                    <textarea name="" id="" cols="70" rows="3"></textarea>
+                </div>
+
+            </div>
+            <hr> -->
+
+
+
+        </div>
+    </div>
+
+</body>
+<script src="./index.js"></script>
+
+</html>
